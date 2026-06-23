@@ -10,23 +10,23 @@ function TodoForm() {
   useEffect(() => {
     if (editTodo) {
       setText(editTodo.text);
-    }
-  }, [editTodo]);
+        }
+    }, [editTodo]);
 
-  const handleSubmit = () => {
-    if (!text.trim()) return;
+    const handleSubmit = () => {
+        if (!text.trim()) return;
 
-    if (editTodo) {
-      updateTodo(editTodo.id, text);
-      setEditTodo(null);
-    } else {
-      addTodo(text);
-    }
+        if (editTodo) {
+            updateTodo(editTodo.id, text);
+            setEditTodo(null);
+        } else {    
+        addTodo(text);
+        }
 
-    setText("");
-  };
+        setText("");
+    };
 
-  return (
+    return (
     <div>
       <input
         value={text}
